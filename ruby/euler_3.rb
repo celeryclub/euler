@@ -6,13 +6,7 @@ gpf = 1
 
 for i in 1..(sr_num)
   if num % i == 0
-    is_prime = true
-    for j in 2..(i - 1)
-      is_prime = false if i % j == 0
-    end
-    if is_prime
-      gpf = i > gpf ? i : gpf
-    end
+    gpf = i > gpf ? i : gpf if (2..(i - 1)).all? { |j| i % j != 0 }
   end
 end
 

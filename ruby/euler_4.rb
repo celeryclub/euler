@@ -2,12 +2,10 @@
 
 largest = 0
 
-for i in 100..999
-  for j in i..999
-    product = i * j
-    if product.to_s == product.to_s.reverse
-      largest = product > largest ? product : largest
-    end
+for a in 100..999
+  for b in a..999
+    product = a * b
+    largest = product > largest ? product : largest if product.to_s == product.to_s.reverse
   end
 end
 

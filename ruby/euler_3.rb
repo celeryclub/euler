@@ -4,9 +4,9 @@ num = 600851475143
 sr_num = Math.sqrt(num).ceil
 gpf = 1
 
-for i in 1..(sr_num)
-  if num % i == 0
-    gpf = i > gpf ? i : gpf if (2..(i - 1)).all? { |j| i % j != 0 }
+for a in 1..(sr_num)
+  if num % a == 0
+    gpf = a > gpf ? a : gpf if (2..(a - 1)).all? { |b| a % b != 0 }
   end
 end
 

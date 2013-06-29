@@ -6,11 +6,11 @@ largestProduct :: String -> Int
 largestProduct numberString = findLargest 0 numberString
     where findLargest largestFound ns =
             if length ns < 5
-              then largestFound
-              else let product = foldl (*) 1 $ map digitToInt $ take 5 ns
-                       in if product > largestFound
-                              then findLargest product $ tail ns
-                              else findLargest largestFound $ tail ns
+            then largestFound
+            else let product = foldl (*) 1 $ map digitToInt $ take 5 ns
+                     in if product > largestFound
+                        then findLargest product $ tail ns
+                        else findLargest largestFound $ tail ns
 
 main :: IO ()
 main = print $ largestProduct "\

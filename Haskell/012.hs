@@ -4,7 +4,7 @@
 -- http://forum.projecteuler.net/viewtopic.php?f=50&t=2457&hilit=012&start=15
 -- http://www.haskell.org/haskellwiki/99_questions/Solutions/35
 
-import Data.List (group, foldl1')  
+import Data.List (group, foldl1')
 
 firstTriangleNumberWithOverNDivisors :: Integer -> Integer
 firstTriangleNumberWithOverNDivisors n =

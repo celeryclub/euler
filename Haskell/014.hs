@@ -1,11 +1,14 @@
 -- http://projecteuler.net/problem=14
 
+import Data.Map (Map)
+import qualified Data.Map as Map
+
 numberWithLongestChainUnder :: Integer -> Integer
 numberWithLongestChainUnder n = tryStartingWith 0 0 $ n - 1
 
 tryStartingWith :: Integer -> Integer -> Integer -> Integer
 tryStartingWith longestLength theOne current =
-          if current > 0
+          if current > 500000
           then let currentLength = lengthOfChainStartingWith current
                in if currentLength > longestLength
                   then tryStartingWith currentLength current $ current - 1

@@ -1,10 +1,7 @@
 // https://projecteuler.net/problem=1
 
-var total = 0
-for i in 1..<1000 {
-  if i % 3 == 0 || i % 5 == 0 {
-    total += i
-  }
-}
+let sum = Array(1..<1000)
+  .filter { $0 % 3 == 0 || $0 % 5 == 0 }
+  .reduce(0) { $0 + $1 }
 
-println(total)
+println(sum)

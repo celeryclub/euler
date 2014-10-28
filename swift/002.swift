@@ -1,18 +1,12 @@
 // https://projecteuler.net/problem=2
 
-var current = 1
-var next = 2
-var sum = 0
-var tmp: Int
-
-while current < 4000000 {
-  if current % 2 == 0 {
-    sum += current
+func accumSum(total: Int, current: Int, next: Int, limit: Int) -> Int {
+  if current < limit {
+    var newTotal = current % 2 == 0 ? total + current : total
+    return accumSum(newTotal, next, current + next, limit)
+  } else {
+    return total
   }
-
-  tmp = current
-  current = next
-  next = tmp + next
 }
 
-println(sum)
+println(accumSum(0, 1, 2, 4000000))

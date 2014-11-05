@@ -1,12 +1,12 @@
 // https://projecteuler.net/problem=2
 
-func accumSum(total: Int, current: Int, next: Int, limit: Int) -> Int {
+func evenFibonacciSum(limit: Int, total: Int = 0, current: Int = 1, next: Int = 2) -> Int {
   if current < limit {
     var newTotal = current % 2 == 0 ? total + current : total
-    return accumSum(newTotal, next, current + next, limit)
+    return evenFibonacciSum(limit, total: newTotal, current: next, next: current + next)
   } else {
     return total
   }
 }
 
-println(accumSum(0, 1, 2, 4000000))
+println(evenFibonacciSum(4000000))

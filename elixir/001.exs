@@ -1,22 +1,16 @@
 # https://projecteuler.net/problem=1
 
 defmodule Sums do
-  def loop_it(0, sum) do
-    sum
+  def below(limit), do: _below(limit - 1)
+
+  def _below(0), do: 0
+
+  def _below(current)
+    when rem(current, 3) === 0 or rem(current, 5) === 0 do
+    current + _below(current - 1)
   end
 
-  def loop_it(current, sum) do
-    if rem(current, 3) === 0 || rem(current, 5) === 0 do
-      loop_it(current - 1, sum + current)
-    else
-      loop_it(current - 1, sum)
-    end
-  end
-
-  def below(limit) do
-    loop_it(limit - 1, 0)
-  end
+  def _below(current), do: _below(current - 1)
 end
 
-# IO.inspect(Sums.below(10))
 IO.inspect(Sums.below(1000))

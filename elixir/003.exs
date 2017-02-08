@@ -1,4 +1,4 @@
-# https://projecteuler.net/problem=2
+# https://projecteuler.net/problem=3
 
 defmodule PrimeFactors do
   def largest(dividend) do

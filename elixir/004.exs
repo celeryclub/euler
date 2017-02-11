@@ -8,14 +8,19 @@ defmodule PalindromicProduct do
     _largest(smallest_multiplier, largest_multiplier, largest_multiplier, 0)
   end
 
-  def _largest(_, a, b, largest_product)
-    when a < 10 and b < 10 do
+  def _largest(smallest_multiplier, a, b, largest_product)
+    when a < smallest_multiplier and b < smallest_multiplier do
     largest_product
   end
 
   def _largest(smallest_multiplier, a, b, largest_product)
     when b < smallest_multiplier do
     _largest(smallest_multiplier, a - 1, a - 1, largest_product)
+  end
+
+  def _largest(smallest_multiplier, a, b, largest_product)
+    when a * b < largest_product do
+    _largest(smallest_multiplier, a, b - 1, largest_product)
   end
 
   def _largest(smallest_multiplier, a, b, largest_product) do
